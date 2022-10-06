@@ -3,8 +3,8 @@ plugins {
     id 'application'
 }
 
-group 'org.uvt.dp-book'
-version '1.0-SNAPSHOT'
+group 'org.uvt'
+version '1.0'
 
 repositories {
     mavenCentral()
@@ -20,10 +20,6 @@ test {
 }
 
 application {
-    mainModule = 'uvt-design-patters-lab.dp-book'
-    mainClass = 'uvt-design-patters-lab.dp-book.DpBookMain'
-}
-
-java {
-    modularity.inferModulePath = true
+    mainModule = 'org.uvt'
+    mainClass = 'org.uvt.Main'
 }
