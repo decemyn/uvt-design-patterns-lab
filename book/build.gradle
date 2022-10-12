@@ -1,10 +1,9 @@
 plugins {
     id 'java'
-    id 'application'
 }
 
 group 'org.uvt'
-version '1.0'
+version 'unspecified'
 
 repositories {
     mavenCentral()
@@ -17,9 +16,4 @@ dependencies {
 
 test {
     useJUnitPlatform()
-}
-
-application {
-    mainModule = 'org.uvt'
-    mainClass = 'org.uvt.Main'
 }
