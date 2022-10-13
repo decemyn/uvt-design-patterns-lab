@@ -1,21 +1,22 @@
 package org.uvt.book;
 
-public class Table {
+public class Table extends Element {
     private String title = "";
 
     public Table(String title) {
-        this.title = title;
+        super(title);
     }
 
     public String getTitle() {
-        return title;
+        return super.getElementContent();
     }
 
     public void setTitle(String title) {
-        this.title = title;
+        super.addElementContent(title);
     }
 
     public void print() {
-        System.out.println(String.format("Table: %s",this.title));
+        System.out.print("Table: ");
+        super.print();
     }
 }

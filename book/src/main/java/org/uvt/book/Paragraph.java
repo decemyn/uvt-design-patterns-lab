@@ -1,21 +1,21 @@
 package org.uvt.book;
 
-public class Paragraph {
-    private String text = "";
+final public class Paragraph extends Element {
 
     public Paragraph(String text) {
-        this.text = text;
+        super(text);
     }
 
     public String getText() {
-        return text;
+        return super.getElementContent();
     }
 
     public void setText(String text) {
-        this.text = text;
+        super.addElementContent(text);
     }
 
     public void print() {
-        System.out.println(String.format("Paragraph: %s",this.text));
+        System.out.print("Paragraph: ");
+        super.print();
     }
 }
