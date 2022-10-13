@@ -1,21 +1,21 @@
 package org.uvt.book;
 
-public class Image {
-    private String imageName = "";
+public class Image extends Element {
 
     public Image(String imageName) {
-        this.imageName = imageName;
+        super(imageName);
     }
 
     public String getImageName() {
-        return imageName;
+        return super.getElementContent();
     }
 
     public void setImageName(String imageName) {
-        this.imageName = imageName;
+        super.addElementContent(imageName);
     }
 
     public void print() {
-        System.out.println(String.format("Image: %s",this.imageName));
+        System.out.print("Image: ");
+        super.print();
     }
 }
