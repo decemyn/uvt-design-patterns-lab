@@ -7,15 +7,14 @@ final public class Paragraph extends Element {
     }
 
     public String getText() {
-        return super.getElementContent();
+        return super.getMasterElement();
     }
 
     public void setText(String text) {
-        super.addElementContent(text);
+        super.setMasterElement(text);
     }
 
     public void print() {
-        System.out.print("Paragraph: ");
-        super.print();
+        System.out.println(String.format("Paragraph: %s", this.getText()));
     }
 }

@@ -1,46 +1,32 @@
 package org.uvt.book;
 
 import java.util.ArrayList;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
 
-public class Book {
-    private String bookName = "";
-    ArrayList<Chapter> chapters = new ArrayList<>();
+public class Book extends Element {
     ArrayList<Author> authors = new ArrayList<>();
 
-    public Book(String bookName) {
-        this.bookName = bookName;
+    public Book(String elementContent) {
+        super(elementContent);
     }
 
     public String getBookName() {
-        return bookName;
+        return super.getMasterElement();
     }
 
     public void setBookName(String bookName) {
-        this.bookName = bookName;
+        super.setMasterElement(bookName);
     }
 
-    public int createChapter(String chapterName) {
-        this.chapters.add(new Chapter(chapterName));
-        return this.chapters.size() - 1;
-    }
 
     public void addAuthor(Author author) {
         this.authors.add(author);
     }
 
-    public Chapter getChapter(int chapterIndex){
-        return this.chapters.get(chapterIndex);
-    }
-
     public void print() {
-        System.out.println(String.format("Book name: %s",this.bookName));
-        ArrayList<String> authorNameList = new ArrayList<>();
-        this.authors.forEach(author -> {
-            authorNameList.add(author.getName());
-        });
-        System.out.println(String.format("Authors: %s", authorNameList));
-        this.chapters.forEach(Chapter::print);
+        System.out.println(String.format("Book name: %s\n\n", this.getBookName()));
+        System.out.println("Authors:");
+        authors.forEach(Author::print);
+        System.out.println("\n");
+        super.print();
     }
 }
