@@ -7,15 +7,14 @@ public class Image extends Element {
     }
 
     public String getImageName() {
-        return super.getElementContent();
+        return super.getMasterElement();
     }
 
     public void setImageName(String imageName) {
-        super.addElementContent(imageName);
+        super.setMasterElement(imageName);
     }
 
     public void print() {
-        System.out.print("Image: ");
-        super.print();
+        System.out.println(String.format("Image: %s", this.getImageName()));
     }
 }

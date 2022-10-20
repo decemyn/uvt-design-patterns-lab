@@ -8,15 +8,14 @@ public class Table extends Element {
     }
 
     public String getTitle() {
-        return super.getElementContent();
+        return super.getMasterElement();
     }
 
     public void setTitle(String title) {
-        super.addElementContent(title);
+        super.setMasterElement(title);
     }
 
     public void print() {
-        System.out.print("Table: ");
-        super.print();
+        System.out.println(String.format("Table: %s", this.getTitle()));
     }
 }

@@ -1,31 +1,27 @@
 package org.uvt;
 
-import org.uvt.book.Author;
-import org.uvt.book.Book;
-import org.uvt.book.Chapter;
-import org.uvt.book.SubChapter;
+import org.uvt.book.*;
 
 public class Main {
     public static void main(String[] args) {
-        Book discoTitanic = new Book("Disco Titanic");
+        Book noapteBuna = new Book("Noapte buna, copii!");
         Author rpGheo = new Author("Radu Pavel Gheo");
-        discoTitanic.addAuthor(rpGheo);
-        int indexChOne = discoTitanic.createChapter("Capitolul 1");
-        Chapter chapterOne = discoTitanic.getChapter(indexChOne);
-        int indecSubChOne = chapterOne.createSubChapter("Subcapitolul 1.1");
-        SubChapter subChapterOneOne = chapterOne.getSubChapter(indecSubChOne);
-        subChapterOneOne.createNewParagraph("Paragraph 1");
-        subChapterOneOne.createNewParagraph("Paragraph 2");
-        subChapterOneOne.createNewParagraph("Paragraph 3");
-        subChapterOneOne.createNewTable("Table 1");
-        subChapterOneOne.createNewParagraph("Paragraph 4");
-        subChapterOneOne.createNewTable("Table 2");
-        subChapterOneOne.createNewImage("Image 1");
-        System.out.println("\nEntire book print\n");
-        discoTitanic.print();
-        System.out.println("\nSubChapter only print\n");
-        subChapterOneOne.print();
-        System.out.println("\nEntire chapter print\n");
-        chapterOne.print();
+        noapteBuna.addAuthor(rpGheo);
+
+        Section cap1 = new Section("Capitolul 1");
+        Section cap11 = new Section("Capitolul 1.1");
+        Section cap111 = new Section("Capitolul 1.1.1");
+        Section cap1111 = new Section("Subchapter 1.1.1.1");
+        noapteBuna.addElement(new Paragraph("Multumesc celor care ..."));
+        noapteBuna.addElement(cap1);
+        cap1.addElement(new Paragraph("Moto capitol"));
+        cap1.addElement(cap11);
+        cap11.addElement(new Paragraph("Text from subchapter 1.1"));
+
+        cap11.addElement(cap111);
+        cap111.addElement(new Paragraph("Text from subchapter 1.1.1"));
+        cap111.addElement(cap1111);
+        cap1111.addElement(new Image("Image subchapter 1.1.1.1"));
+        noapteBuna.print();
     }
 }
