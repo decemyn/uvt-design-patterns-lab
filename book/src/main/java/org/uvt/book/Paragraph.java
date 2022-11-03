@@ -1,6 +1,7 @@
 package org.uvt.book;
 
 final public class Paragraph extends Element {
+    IAlignStrategy alignStrategy = null;
 
     public Paragraph(String text) {
         super(text);
@@ -14,7 +15,15 @@ final public class Paragraph extends Element {
         super.setMasterElement(text);
     }
 
+    public void setAlignStrategy(IAlignStrategy alignStrategy) {
+        this.alignStrategy = alignStrategy;
+    }
+
     public void print() {
-        System.out.println(String.format("Paragraph: %s", this.getText()));
+        if (this.alignStrategy == null) {
+            System.out.printf("Paragraph: %s%n", this.getText());
+        } else {
+            this.alignStrategy.render(this);
+        }
     }
 }
