@@ -1,4 +1,6 @@
-package org.uvt.book;
+package org.uvt.book.models;
+
+import org.uvt.book.models.Element;
 
 public class Table extends Element {
     private String title = "";

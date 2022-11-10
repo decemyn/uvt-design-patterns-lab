@@ -1,4 +1,4 @@
-package org.uvt.book;
+package org.uvt.book.models;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,6 @@
-package org.uvt.book;
+package org.uvt.book.models;
+
+import org.uvt.book.services.IAlignStrategy;
 
 final public class Paragraph extends Element {
     IAlignStrategy alignStrategy = null;

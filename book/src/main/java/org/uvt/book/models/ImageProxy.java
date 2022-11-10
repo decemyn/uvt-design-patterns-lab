@@ -1,6 +1,6 @@
-package org.uvt.book;
+package org.uvt.book.models;
 
-public class ImageProxy extends Element implements  IPicture {
+public class ImageProxy extends Element implements IPicture {
     Image realImage = null;
     String url;
     int dim;
