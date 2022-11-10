@@ -2,7 +2,7 @@ package org.uvt.book.models;
 
 import org.uvt.book.services.IAlignStrategy;
 
-final public class Paragraph extends Element {
+public final class Paragraph extends Element {
     IAlignStrategy alignStrategy = null;
 
     public Paragraph(String text) {
@@ -27,5 +27,11 @@ final public class Paragraph extends Element {
         } else {
             this.alignStrategy.render(this);
         }
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visitParagraph(this);
+        super.accept(visitor);
     }
 }

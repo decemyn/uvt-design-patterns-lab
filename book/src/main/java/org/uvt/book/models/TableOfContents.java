@@ -1,6 +1,6 @@
 package org.uvt.book.models;
 
-public class TableOfContents extends Element {
+public final class TableOfContents extends Element {
     private String toc = "";
 
     public TableOfContents(String toc) {
@@ -18,4 +18,5 @@ public class TableOfContents extends Element {
     public void print() {
         System.out.printf("Table of Contents: %s%n", this.getToc());
     }
+
 }

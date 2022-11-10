@@ -2,7 +2,7 @@ package org.uvt.book.models;
 
 import java.util.concurrent.TimeUnit;
 
-public class Image extends Element implements IPicture {
+public final class Image extends Element implements IPicture {
     String url;
     int dim;
     String content;
@@ -49,5 +49,11 @@ public class Image extends Element implements IPicture {
     @Override
     public String content() {
         return this.content;
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visitImage(this);
+        super.accept(visitor);
     }
 }
