@@ -23,9 +23,11 @@ public class Book extends Element {
     }
 
     public void print() {
-        System.out.println(String.format("Book name: %s\n\n", this.getBookName()));
-        System.out.println("Authors:");
-        authors.forEach(Author::print);
+        System.out.printf("Book name: %s\n\n%n", this.getBookName());
+        if (!authors.isEmpty()) {
+            System.out.println("Authors:");
+            authors.forEach(Author::print);
+        }
         System.out.println("\n");
         super.print();
     }
