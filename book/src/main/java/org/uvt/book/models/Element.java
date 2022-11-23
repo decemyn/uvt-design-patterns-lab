@@ -38,10 +38,6 @@ public abstract class Element implements IElement {
     @Override
     public void print() {
         System.out.println(this.elementContent);
-    }
-
-    @Override
-    public void accept(Visitor visitor) {
-        this.childElements.forEach(element -> element.accept(visitor));
+        this.childElements.forEach(Element::print);
     }
 }

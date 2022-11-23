@@ -2,8 +2,8 @@ package org.uvt.book.models;
 
 import java.util.ArrayList;
 
-public final class Book extends Element {
-    public ArrayList<Author> authors = new ArrayList<>();
+public class Book extends Element {
+    ArrayList<Author> authors = new ArrayList<>();
 
     public Book(String elementContent) {
         super(elementContent);
@@ -22,9 +22,13 @@ public final class Book extends Element {
         this.authors.add(author);
     }
 
-    @Override
-    public void accept(Visitor visitor) {
-        visitor.visitBook(this);
-        super.accept(visitor);
+    public void print() {
+        System.out.printf("Book name: %s\n\n%n", this.getBookName());
+        if (!authors.isEmpty()) {
+            System.out.println("Authors:");
+            authors.forEach(Author::print);
+        }
+        System.out.println("\n");
+        super.print();
     }
 }

@@ -4,7 +4,6 @@ import org.uvt.book.models.*;
 import org.uvt.book.services.AlignCenter;
 import org.uvt.book.services.AlignLeft;
 import org.uvt.book.services.AlignRight;
-import org.uvt.book.services.RenderContentVisitor;
 
 public class Main {
     public static void main(String[] args) throws Exception {
@@ -25,8 +24,7 @@ public class Main {
         cap1.addElement(new Table("Table 1"));
         testBook.addElement(toc);
         testBook.addElement(cap1);
-        RenderContentVisitor renderContentVisitor = new RenderContentVisitor("Book render visitor");
-        testBook.accept(renderContentVisitor);
+        testBook.print();
 //        BookStatistics stats = new BookStatistics();
 //        cap1.accept(stats);
 //        stats.printStatistics();

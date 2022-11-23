@@ -1,19 +1,18 @@
 package org.uvt.book.models;
 
+import org.uvt.book.models.Element;
+
 public interface IElement {
 
-    String getMasterElement();
+    public String getMasterElement();
 
-    void setMasterElement(String elementContent);
+    public void setMasterElement(String elementContent);
 
-    Element getElement(int elementNumber);
+    public Element getElement(int elementNumber);
 
-    void addElement(Element element);
+    public void addElement(Element element);
 
-    void removeElement(Element element);
+    public void removeElement(Element element);
 
-    void print();
-
-    void accept(Visitor visitor);
-
+    public void print();
 }

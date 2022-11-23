@@ -1,9 +1,9 @@
 package org.uvt.book.models;
 
 public interface IPicture {
-    String url();
+    public String url();
 
-    int dim();
+    public int dim();
 
-    String content();
+    public String content();
 }
