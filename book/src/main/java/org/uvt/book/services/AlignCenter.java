@@ -1,6 +1,8 @@
-package org.uvt.book;
+package org.uvt.book.services;
 
-public class AlignCenter implements IAlignStrategy{
+import org.uvt.book.models.Paragraph;
+
+public class AlignCenter implements IAlignStrategy {
 
     @Override
     public void render(Paragraph paragraph) {

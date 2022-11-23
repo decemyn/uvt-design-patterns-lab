@@ -1,6 +1,8 @@
-package org.uvt.book;
+package org.uvt.book.models;
 
-final public class Paragraph extends Element {
+import org.uvt.book.services.IAlignStrategy;
+
+public final class Paragraph extends Element {
     IAlignStrategy alignStrategy = null;
 
     public Paragraph(String text) {
@@ -25,5 +27,11 @@ final public class Paragraph extends Element {
         } else {
             this.alignStrategy.render(this);
         }
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visitParagraph(this);
+        super.accept(visitor);
     }
 }
