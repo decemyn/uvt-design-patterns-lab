@@ -1,6 +1,6 @@
-package org.uvt.book;
+package org.uvt.book.models;
 
-public class Table extends Element {
+public final class Table extends Element {
     private String title = "";
 
     public Table(String title) {
@@ -17,5 +17,11 @@ public class Table extends Element {
 
     public void print() {
         System.out.println(String.format("Table: %s", this.getTitle()));
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visitTable(this);
+        super.accept(visitor);
     }
 }

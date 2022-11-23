@@ -1,4 +1,4 @@
-package org.uvt.book;
+package org.uvt.book.models;
 
 import java.util.ArrayList;
 
@@ -38,6 +38,10 @@ public abstract class Element implements IElement {
     @Override
     public void print() {
         System.out.println(this.elementContent);
-        this.childElements.forEach(Element::print);
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        this.childElements.forEach(element -> element.accept(visitor));
     }
 }

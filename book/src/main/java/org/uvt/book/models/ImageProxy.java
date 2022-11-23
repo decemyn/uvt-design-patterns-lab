@@ -1,6 +1,6 @@
-package org.uvt.book;
+package org.uvt.book.models;
 
-public class ImageProxy extends Element implements  IPicture {
+public final class ImageProxy extends Element implements IPicture {
     Image realImage = null;
     String url;
     int dim;
@@ -38,5 +38,11 @@ public class ImageProxy extends Element implements  IPicture {
 
     public void loadImage() {
         this.realImage = new Image(this.getMasterElement(), this.url, this.dim, this.content);
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visitImageProxy(this);
+        super.accept(visitor);
     }
 }
