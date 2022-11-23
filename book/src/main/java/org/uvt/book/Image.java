@@ -1,4 +1,4 @@
-package org.uvt.book.models;
+package org.uvt.book;
 
 import java.util.concurrent.TimeUnit;
 

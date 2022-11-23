@@ -1,4 +1,4 @@
-package org.uvt.book.models;
+package org.uvt.book;
 
 public class Author {
     private String name = "";

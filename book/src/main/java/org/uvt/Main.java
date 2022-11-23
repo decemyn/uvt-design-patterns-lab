@@ -1,10 +1,6 @@
 package org.uvt;
 
-import org.uvt.book.models.Paragraph;
-import org.uvt.book.models.Section;
-import org.uvt.book.services.AlignCenter;
-import org.uvt.book.services.AlignLeft;
-import org.uvt.book.services.AlignRight;
+import org.uvt.book.*;
 
 public class Main {
     public static void main(String[] args) throws Exception {

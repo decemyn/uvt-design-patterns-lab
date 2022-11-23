@@ -1,6 +1,4 @@
-package org.uvt.book.services;
-
-import org.uvt.book.models.Paragraph;
+package org.uvt.book;
 
 public interface IAlignStrategy {
 
