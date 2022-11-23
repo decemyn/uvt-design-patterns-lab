@@ -4,8 +4,8 @@ import org.uvt.book.models.*;
 
 public final class RenderContentVisitor extends Visitor {
 
-    public RenderContentVisitor(String visitorName) {
-        super(visitorName);
+    public RenderContentVisitor() {
+        super("Rendered Book Content:");
     }
 
     @Override
